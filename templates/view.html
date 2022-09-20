@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main %}
+<form>
+    <table >
+        <tr>
+            <td colspan="4" style="text-align: center;">
+                <h2 style="color:rgb(255,127,80);font-size: 35px;" style="font-family:Fantasy;">Corruptionists Information</h2>
+                <h2 style="font-size:10px">_________________________________________________________________</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Profession</td>
+            <td>Corrupt Amt</td>
+        </tr>
+
+        {% for row in rows %}
+
+        <tr>
+            <td>{{row["id"]}}</td>
+            <td>{{row["name"]}}</td>
+            <td>{{row["email"]}}</td>
+            <td>{{row["salary"]}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</form><br><br><br><br>
+
+<ul>
+    {% if 'email' not in session %}
+            <li style="color:rgb(246, 242, 242);font-size: 20px;" style="font-family:Fantasy;" style="float:left"><a href="/signup">Sign Up</a></li>
+            <li style="float:right" style="font-family:Fantasy;" style ="color:rgb(246, 242, 242);font-size: 20px;"><a href="/login">Login</a></li>
+            {% else %}
+            <li style="float:none"><a href="/" style="float:left">Back</a></li>
+            <li style="float:none"><a href="/logout" style="float:right">Log Out</a></li>
+            {% endif %}
+    </ul>
+{% endblock main %}

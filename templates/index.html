@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+<br>
+<h2><a href="/add">Add Corrupt</a></h2>
+<h2><a href="/view">Indian Corruptionists List</a></h2>
+<h2><a href="/update">Update Corruption Details</a></h2>
+<h2><a href="/delete">Delete Corruptionists</a></h2>
+<h2><a href="/search">Search Corruptionist</a></h2><br><br>
+<ul>
+{% if 'email' not in session %}
+        <li style="color:rgb(246, 242, 242);font-size: 20px;" style="font-family:Fantasy;" style="float:left"><a href="/signup">Sign Up</a></li>
+        <li style="float:right" style="font-family:Fantasy;" style ="color:rgb(246, 242, 242);font-size: 20px;"><a href="/login">Login</a></li>
+        {% else %}
+        <li style="float:none"><a href="/logout" style="float:right">Log Out</a></li>
+        {% endif %}
+</ul>
+{% endblock main %}

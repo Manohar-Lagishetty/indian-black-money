@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="/updatesuccess" method="post">
+    <table>
+
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <h2>Corruptionists Information</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Id</td>
+            <td><input type="number" name="id" value={{id}} disabled></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value={{name}}></td>
+        </tr>
+        <tr>
+            <td>Contact</td>
+            <td><input type="text" name="contact" value={{contact}}></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" value={{email}}></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" name="salary" value={{salary}}></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+{% endblock main %}

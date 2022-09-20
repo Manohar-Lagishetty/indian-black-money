@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="/deleterecord" method="post">
+    <table>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <h2>Remove Corruptionist</h2>
+                <h2 style="font-size:10px">_________________________________________________________________</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Corruptionist ID :</td>
+            <td><input type="text" name="id" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form><br><br><br><br>
+
+<ul>
+    {% if 'email' not in session %}
+            <li style="color:rgb(246, 242, 242);font-size: 20px;" style="font-family:Fantasy;" style="float:left"><a href="/signup">Sign Up</a></li>
+            <li style="float:right" style="font-family:Fantasy;" style ="color:rgb(246, 242, 242);font-size: 20px;"><a href="/login">Login</a></li>
+            {% else %}
+            <li style="float:none"><a href="/" style="float:left">Back</a></li>
+            <li style="float:none"><a href="/logout" style="float:right">Log Out</a></li>
+            {% endif %}
+    </ul>
+{% endblock main %}

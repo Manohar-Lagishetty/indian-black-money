@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<form method="post" action="http://localhost:5000/signup_success">
+    <table>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <h2>Admin Registration Form</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Name:</td>
+            <td><input type='text' name='name' required></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type='email' name='email' required></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' name='pass' required></td>
+        </tr>
+        {% if msg %}
+        <tr>
+            <td colspan="2" style="text-align: center;">{{msg}}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form><br><br><br>
+<ul>
+{% if 'email' not in session %}
+        <li style="color:rgb(246, 242, 242);font-size: 20px;" style="font-family:Fantasy;" style="float:left"><a href="/login">Login</a></li>
+        <li style="float:right" style="font-family:Fantasy;" style ="color:rgb(246, 242, 242);font-size: 40px;"><a href="/">Back</a></li>
+        {% else %}
+        <!-- <li style="float:none"><a href="/" style="float:left">Home</a></li> -->
+        <li style="float:none"><a href="/logout" style="float:right">Log Out</a></li>
+        {% endif %}
+</ul>
+
+{% endblock main %}
